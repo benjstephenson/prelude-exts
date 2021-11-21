@@ -1,0 +1,25 @@
+{
+  "name": "prelude-exts",
+  "version": "0.0.1",
+  "description": "Extensions to prelude-ts ",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc --extendedDiagnostics -p .",
+    "test": "jasmine-ts --config=jasmine.json"
+  },
+  "author": "Benji Stephenson",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^3.10.2",
+    "jasmine": "^3.10.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-ts": "^0.4.0",
+    "mismatched": "^2.9.2",
+    "thespian": "^2.9.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "prelude-ts": "^1.0.3"
+  }
+}
