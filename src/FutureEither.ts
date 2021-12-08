@@ -1,4 +1,4 @@
-import { Future, Either, Option, Right, Left } from 'prelude-ts'
+import {Future, Either, Option, EitherStatic} from 'prelude-ts'
 import './Either.ext'
 import './Future.ext'
 
@@ -125,7 +125,7 @@ export class FutureEither<L, R> {
    */
   leftFlatMap<U>(f: (v: L) => FutureEither<U, R>): FutureEither<U, R> {
     return new FutureEither(
-      this.fe.flatMap((e) => Either.mapLeftF(e.mapLeft((l) => f(l).value()))).map(l => l.flatten())
+      this.fe.flatMap((e) => EitherStatic.leftFmap(e.mapLeft((l) => f(l).value()))).map(EitherStatic.flattenLeft)
     )
   }
 
